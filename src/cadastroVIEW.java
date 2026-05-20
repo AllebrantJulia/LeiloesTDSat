@@ -157,7 +157,7 @@ public class cadastroVIEW extends javax.swing.JFrame {
         cadastroNome.setText("");
         cadastroValor.setText("");
         } catch (NumberFormatException erro) {
-            JOptionPane.showMessageDialog(null, "O campo valor deve conter apenas números");
+            JOptionPane.showMessageDialog(null, "O campo valor deve conter apenas números!");
         }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
