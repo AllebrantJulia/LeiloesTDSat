@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author Adm
@@ -140,7 +140,10 @@ public class cadastroVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroNomeActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        
+        try {
         ProdutosDTO produto = new ProdutosDTO();
+        
         String nome = cadastroNome.getText();
         String valor = cadastroValor.getText();
         String status = "A Venda";
@@ -151,6 +154,11 @@ public class cadastroVIEW extends javax.swing.JFrame {
         ProdutosDAO produtodao = new ProdutosDAO();
         produtodao.cadastrarProduto(produto);
         
+        cadastroNome.setText("");
+        cadastroValor.setText("");
+        } catch (NumberFormatException erro) {
+            JOptionPane.showMessageDialog(null, "O campo valor deve conter apenas números");
+        }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
